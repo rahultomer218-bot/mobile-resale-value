@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "mobile-resale-value"
+version = "0.0.1"
+description = "An ML-powered mobile phone resale price predictor"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Your Name", email = "your_email@gmail.com" }
+]
+keywords = ["machine learning", "mobile", "resale", "price prediction"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating Language :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/mobile-resale-value"
+Repository = "https://github.com/YOUR_USERNAME/mobile-resale-value"
+Issues = "https://github.com/YOUR_USERNAME/mobile-resale-value/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mobile_resale_value*", "src*"]
+exclude = ["tests*", "notebook*", "artifacts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311"]
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | artifacts
+  | notebook
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88

@@ -1,0 +1,63 @@
+# Web Framework
+fastapi
+uvicorn
+
+# MongoDB
+pymongo
+pymongo[srv]
+dnspython
+
+# Data Processing
+pandas
+numpy
+scipy
+
+# Machine Learning
+scikit-learn
+xgboost
+catboost
+
+# Model Serialization
+dill
+
+# Data Validation
+pydantic
+
+# Jupyter Notebook
+jupyter
+ipykernel
+notebook
+
+# Environment Variables
+python-dotenv
+
+# YAML Config
+PyYAML
+
+# Logging
+loguru
+
+# Google Cloud
+google-cloud-storage
+google-cloud-run
+
+# MLflow (experiment tracking)
+mlflow
+
+# Visualization (for EDA in notebook)
+matplotlib
+seaborn
+plotly
+
+# HTTP Requests
+requests
+httpx
+
+# Testing
+pytest
+
+# Utilities
+tqdm
+python-box
+ensure
+-e .
