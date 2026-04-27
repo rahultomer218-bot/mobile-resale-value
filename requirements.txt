@@ -60,4 +60,3 @@ pytest
 tqdm
 python-box
 ensure
--e .

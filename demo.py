@@ -1,16 +1,22 @@
-from mobile_resale_value.logger import logger
-from mobile_resale_value.exception import MobileResaleException
-import sys
+from dotenv import load_dotenv
+load_dotenv()
 
-# Test logger
-logger.info("Logger is working!")
-logger.warning("This is a warning!")
-logger.error("This is an error!")
-logger.critical("This is a critical message!")
-print("Logger test completed! Check the logs/ folder for the log file.")
+from src.pipeline.prediction_pipeline import MobileData, PredictionPipeline
 
-# Test exception
-try:
-    a = 1 / 0
-except Exception as e:
-    raise MobileResaleException(e, sys)
+# Sample input
+mobile = MobileData(
+    brand="OnePlus",
+    model_name="OnePlus 10R",
+    year_of_launch=2022,
+    purchase_price_inr=88004
+)
+
+# Get dataframe
+df = mobile.get_data_as_dataframe()
+print("Input Data:")
+print(df)
+
+# Predict
+pipeline = PredictionPipeline()
+predicted_price = pipeline.predict(df)
+print(f"\nPredicted Resale Price: ₹{predicted_price:,.2f}")
